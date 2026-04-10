@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://c678r78tkkwqq"]
+
+[ext_resource type="FontFile" uid="uid://dbopjg8twgep8" path="res://VintageLegacy-Regular.otf" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://pr3m41pqumdp" path="res://main_menu.gd" id="1_glbon"]
+[ext_resource type="Texture2D" uid="uid://dlwut4dwt218q" path="res://sprites_n_art/4ce4a795-22d1-4c93-a71c-0df5d7cc7880-0.png" id="2_jix8l"]
+[ext_resource type="Texture2D" uid="uid://d4cwff1iyw47s" path="res://sprites_n_art/c3c7da01-ef79-44cd-b92c-ec630b226db2-0.png" id="3_glbon"]
+[ext_resource type="Texture2D" uid="uid://dgrtryb4axr4" path="res://Untitled-removebg-preview.png" id="4_nlkkf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qe12f"]
+bg_color = Color(0.5414149, 0.72990966, 0.9791271, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7vrkn"]
+font = ExtResource("1_06t4h")
+font_size = 51
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8qtwp"]
+texture = ExtResource("2_jix8l")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dy7ct"]
+texture = ExtResource("2_jix8l")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0o4t1"]
+texture = ExtResource("3_glbon")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0k4wn"]
+texture = ExtResource("4_nlkkf")
+
+[node name="Control" type="Control" unique_id=1682444589]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_glbon")
+
+[node name="Panel5" type="Panel" parent="." unique_id=1463040717]
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 720.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qe12f")
+
+[node name="Label" type="Label" parent="." unique_id=344200924]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 247.0
+offset_right = 395.0
+offset_bottom = 354.0
+text = "Your Average 
+    Pong"
+label_settings = SubResource("LabelSettings_7vrkn")
+
+[node name="start" type="Button" parent="." unique_id=639511095]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 388.0
+offset_right = 203.0
+offset_bottom = 456.0
+text = "start"
+
+[node name="quit" type="Button" parent="." unique_id=618339097]
+layout_mode = 0
+offset_left = 251.0
+offset_top = 388.0
+offset_right = 429.0
+offset_bottom = 456.0
+text = "quit"
+
+[node name="Panel" type="Panel" parent="." unique_id=1225169893]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 198.99998
+offset_right = 141.0
+offset_bottom = 267.0
+rotation = -1.3089969
+scale = Vector2(0.9859879, 1.1776246)
+theme_override_styles/panel = SubResource("StyleBoxTexture_8qtwp")
+
+[node name="Panel2" type="Panel" parent="." unique_id=809004710]
+layout_mode = 0
+offset_left = 504.99997
+offset_top = 282.99997
+offset_right = 589.0
+offset_bottom = 322.99997
+rotation = 2.3561945
+scale = Vector2(1.573064, 1.8509449)
+theme_override_styles/panel = SubResource("StyleBoxTexture_dy7ct")
+
+[node name="Panel3" type="Panel" parent="." unique_id=1284838328]
+layout_mode = 0
+offset_left = 278.0
+offset_top = 131.0
+offset_right = 303.0
+offset_bottom = 171.0
+scale = Vector2(3.2419386, 1.6971453)
+theme_override_styles/panel = SubResource("StyleBoxTexture_0o4t1")
+
+[node name="Panel4" type="Panel" parent="." unique_id=176557777]
+layout_mode = 0
+offset_left = 302.0
+offset_top = 140.0
+offset_right = 412.0
+offset_bottom = 219.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_0k4wn")
+
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

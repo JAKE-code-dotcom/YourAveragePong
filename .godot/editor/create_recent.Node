@@ -1,0 +1,13 @@
+Label
+Panel
+Control
+Button
+CanvasLayer
+CollisionShape2D
+AnimatedSprite2D
+CharacterBody2D
+Area2D
+Timer
+VisibleOnScreenNotifier2D
+VisibleOnScreenNotifier3D
+RigidBody2D

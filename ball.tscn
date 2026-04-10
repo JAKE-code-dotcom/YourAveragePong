@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bxevymji3t5c0"]
+
+[ext_resource type="Script" uid="uid://cr54hg1hwpknt" path="res://ball.gd" id="1_hgol0"]
+[ext_resource type="Texture2D" uid="uid://cltft0xg4awqw" path="res://sprites_n_art/c3c7da01-ef79-44cd-b92c-ec630b226db2-2.png" id="1_ktgx5"]
+[ext_resource type="Texture2D" uid="uid://djiy2lsrndteo" path="res://sprites_n_art/c3c7da01-ef79-44cd-b92c-ec630b226db2-1.png" id="2_hgol0"]
+[ext_resource type="Texture2D" uid="uid://d4cwff1iyw47s" path="res://sprites_n_art/c3c7da01-ef79-44cd-b92c-ec630b226db2-0.png" id="3_n5601"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ktgx5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_n5601")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hgol0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_ktgx5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hgol0"]
+radius = 24.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1544512721]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_hgol0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1788609444]
+position = Vector2(1.1920929e-07, 2.3841858e-07)
+scale = Vector2(0.46901408, 0.5)
+sprite_frames = SubResource("SpriteFrames_ktgx5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1143722566]
+shape = SubResource("CircleShape2D_hgol0")

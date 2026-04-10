@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://dv1uuf8ekm2l5"]
+
+[ext_resource type="PackedScene" uid="uid://b0nv0qmpemoof" path="res://player1.tscn" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://dvo8qc6y3y1ly" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://ch4g77ogo0uac" path="res://player_2.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bxevymji3t5c0" path="res://ball.tscn" id="4_1bvp3"]
+[ext_resource type="FontFile" uid="uid://dbopjg8twgep8" path="res://VintageLegacy-Regular.otf" id="5_lquwl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
+size = Vector2(480, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
+size = Vector2(480, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lquwl"]
+size = Vector2(713, 20)
+
+[node name="Main" type="Node2D" unique_id=151596207]
+script = ExtResource("1_h2yge")
+
+[node name="Player" parent="." unique_id=496723233 instance=ExtResource("1_0xm2m")]
+collision_layer = 0
+collision_mask = 2
+
+[node name="Player2" parent="." unique_id=1137956716 instance=ExtResource("2_0xm2m")]
+collision_layer = 0
+collision_mask = 2
+
+[node name="Ball" parent="." unique_id=1544512721 instance=ExtResource("4_1bvp3")]
+position = Vector2(240, 339)
+
+[node name="p1_ar" type="Area2D" parent="." unique_id=87051500]
+collision_layer = 0
+collision_mask = 2
+
+[node name="Collp1" type="CollisionShape2D" parent="p1_ar" unique_id=457207049]
+position = Vector2(240, -3)
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="p2_ar" type="Area2D" parent="." unique_id=1131187623]
+collision_layer = 0
+collision_mask = 2
+
+[node name="collp2" type="CollisionShape2D" parent="p2_ar" unique_id=969329083]
+position = Vector2(240, 724)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="r_coll" type="Area2D" parent="." unique_id=2140133094]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="r_coll" unique_id=179754547]
+position = Vector2(490, 360.5)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_lquwl")
+
+[node name="r_coll2" type="Area2D" parent="." unique_id=124420945]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="r_coll2" unique_id=663600192]
+position = Vector2(-10, 361)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_lquwl")
+
+[node name="p1_score" type="Label" parent="." unique_id=1242629898]
+offset_left = 433.0
+offset_top = 81.0
+offset_right = 473.0
+offset_bottom = 113.0
+theme_override_fonts/font = ExtResource("5_lquwl")
+theme_override_font_sizes/font_size = 31
+text = "0"
+horizontal_alignment = 1
+
+[node name="p2_score" type="Label" parent="." unique_id=2021661647]
+offset_left = 433.0
+offset_top = 540.0
+offset_right = 473.0
+offset_bottom = 572.0
+theme_override_fonts/font = ExtResource("5_lquwl")
+theme_override_font_sizes/font_size = 31
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="." unique_id=1364761362]
+offset_left = 433.0
+offset_top = 339.0
+offset_right = 473.0
+offset_bottom = 373.0
+theme_override_fonts/font = ExtResource("5_lquwl")
+theme_override_font_sizes/font_size = 31
+text = "|"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="Player" to="." method="_on_player_body_entered"]
+[connection signal="body_entered" from="Player2" to="." method="_on_player_2_body_entered"]
+[connection signal="body_entered" from="p1_ar" to="." method="_on_p_1_ar_body_entered"]
+[connection signal="body_entered" from="p2_ar" to="." method="_on_p_2_ar_body_entered"]
+[connection signal="body_entered" from="r_coll" to="." method="_on_r_coll_body_entered"]
+[connection signal="body_entered" from="r_coll2" to="." method="_on_r_coll_2_body_entered"]
