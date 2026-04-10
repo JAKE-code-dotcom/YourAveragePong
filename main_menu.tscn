@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dlwut4dwt218q" path="res://sprites_n_art/4ce4a795-22d1-4c93-a71c-0df5d7cc7880-0.png" id="2_jix8l"]
 [ext_resource type="Texture2D" uid="uid://d4cwff1iyw47s" path="res://sprites_n_art/c3c7da01-ef79-44cd-b92c-ec630b226db2-0.png" id="3_glbon"]
 [ext_resource type="Texture2D" uid="uid://dgrtryb4axr4" path="res://Untitled-removebg-preview.png" id="4_nlkkf"]
+[ext_resource type="Texture2D" uid="uid://cyasll728niud" path="res://jakelogo.png" id="6_nlkkf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qe12f"]
 bg_color = Color(0.5414149, 0.72990966, 0.9791271, 1)
@@ -24,6 +25,9 @@ texture = ExtResource("3_glbon")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0k4wn"]
 texture = ExtResource("4_nlkkf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qe12f"]
+texture = ExtResource("6_nlkkf")
 
 [node name="Control" type="Control" unique_id=1682444589]
 layout_mode = 3
@@ -102,6 +106,25 @@ offset_top = 140.0
 offset_right = 412.0
 offset_bottom = 219.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_0k4wn")
+
+[node name="Label2" type="Label" parent="." unique_id=819418834]
+layout_mode = 0
+offset_left = 203.0
+offset_top = 623.0
+offset_right = 282.0
+offset_bottom = 650.0
+theme_override_fonts/font = ExtResource("1_06t4h")
+theme_override_font_sizes/font_size = 26
+text = "By JAKE"
+horizontal_alignment = 1
+
+[node name="Panel6" type="Panel" parent="." unique_id=483164791]
+layout_mode = 0
+offset_left = 172.0
+offset_top = 639.0
+offset_right = 317.0
+offset_bottom = 732.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_qe12f")
 
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
